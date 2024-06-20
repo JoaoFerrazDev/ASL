@@ -22,7 +22,7 @@ def train_model(model, train_data, val_data, epochs=10):
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
     history = model.fit(train_data, validation_data=val_data, epochs=epochs)
-    model.save('../models/asl_model_transfer_learning.h5')
+    model.save('../models/asl_model_transfer_learning.keras')
     return history
 
 
@@ -34,4 +34,4 @@ if __name__ == "__main__":
     model = create_transfer_learning_model(img_size)
 
     history = train_model(model, train_data, val_data)
-    print("Model trained and saved to ../models/asl_model_transfer_learning.h5")
+    print("Model trained and saved to ../models/asl_model_transfer_learning.keras")
